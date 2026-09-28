@@ -1,8 +1,8 @@
 # Informe de Auditoría de Red Wi-Fi Insegura
 
-Para este informe vamos a utilizar una máquina virtual, que tiene como sistema operativo Kali Linux. En la máquina virtual, vamos a utilizar el navegador Firefox. El objetivo principal de este informe es documentar, analizar y auditar el tráfico que podría haber en una red wifi pública, identificando los posibles riesgos, las vulnerabilidades y proponer soluciones. 
+Para este informe vamos a utilizar una máquina virtual, que tiene como sistema operativo Kali Linux. El navegador que vamos a utilizar para esta actividad es Firefox. El objetivo principal de este informe es documentar, analizar y auditar el tráfico que podría existir en una red wifi pública, identificando los posibles riesgos, las vulnerabilidades y proponer soluciones. 
 
-Para lograr este objetivo vamos a ingresar y analizar un sitio web (http://neverssl.com), en donde determinaremos el protocolo que utiliza y la información que puede quedar expuesta. Vamos a explicar la importancia de usar una VPN en redes públicas y vamos a adjuntar toda evidencia por medio de capturas de pantalla. 
+Para lograr este objetivo vamos a ingresar y analizar el sitio web http://neverssl.com, en donde determinaremos el protocolo que utiliza y la información que puede quedar expuesta. Vamos a explicar la importancia de usar una VPN en redes públicas y vamos a adjuntar toda evidencia por medio de capturas de pantalla. Finalmente escribiremos 3 reglas de oro para la navegacion de estas redes públicas. 
 
 ## Parte 1 – Exploración
 
