@@ -38,6 +38,28 @@ En la anterior imagen podemos observar un apartado en la izquierda inferior dere
   - Upgrade-Insecure-Requests: 1
   - Priority: u=0, i
 
+Como podemos observar a captura expone en detalle todos los parámetros de la solicitud HTTP.
+
+## Parte 2 – Análisis
+
+### 1. ¿Qué protocolo utiliza el sitio?
+
+En la URL solicitada, nos indica que utiliza protocolo HTTP. Este mismo es un protocolo de comunicación que utilizan los navegadores para pedir páginas web a los servidores, aunque no está protegido por un protocolo de seguridad (como TLS). Por
+esta razón, al ingresar por primera vez, nos va aparecer un cartel que nos advierte de que la página no es segura, ya que no encripta el contenido que se transfiere.
+
+### 2. ¿Qué información puede observarse durante la solicitud?
+
+Entre las información que se puede observar durante la solicitud se encuentran: 
+
+- Método GET: Indica la acción específica que el cliente desea realizar. Este método se utiliza para solicitar un recurso al servidor (en este caso, el directorio `/online/`), indicando que es una operación de solo lectura para obtener la página web.
+- User-Agent: Proporciona información detallada sobre el usuario que origina la petición. Expone algunos datos como el sistema operativo, la arquitectura y el motor del navegador; particularmente, revela que la petición se originó desde un entorno Linux de 64 bits utilizando Mozilla Firefox.
+- Cabeceras legibles en texto plano (Accept): El header `Accept: text/html...` detalla los formatos de contenido que el navegador del cliente es capaz de procesar. Lo verdaderamente importante es que este parámetro evidencia la vulnerabilidad del protocolo HTTP: al no existir una capa de seguridad (como TLS), toda la petición viaja en texto plano. Esto significa que cualquier persona que intercepte el tráfico de la red puede leer, capturar o incluso alterar la información fácilmente.
+
+### 3. ¿Qué riesgos existen al navegar mediante HTTP desde una red Wi-Fi pública?
+
+Como se mencionó anteriormente, el riesgo principal de utilizar el protocolo HTTP es que no cifra el contenido transmitido entre el cliente y el servidor web. Al navegar a través de una red Wi-Fi pública, cualquier persona conectada a la misma puede interceptar los paquetes de datos utilizando analizadores de red como Wireshark.
+
+Por ejemplo, si un usuario accede a una página mediante HTTP y envía datos críticos (como usuario y contraseña del homebanking), un atacante posicionado en la misma red Wi-Fi publica podría capturar ese tráfico en texto plano y observar sus credenciales bancarias. Con esta información, el atacante lograría vulnerar la cuenta y hacer una transferencia no autorizadas.
 
 
 
