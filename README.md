@@ -59,7 +59,22 @@ Entre las información que se puede observar durante la solicitud se encuentran:
 
 Como se mencionó anteriormente, el riesgo principal de utilizar el protocolo HTTP es que no cifra el contenido transmitido entre el cliente y el servidor web. Al navegar a través de una red Wi-Fi pública, cualquier persona conectada a la misma puede interceptar los paquetes de datos utilizando analizadores de red como Wireshark.
 
-Por ejemplo, si un usuario accede a una página mediante HTTP y envía datos críticos (como usuario y contraseña del homebanking), un atacante posicionado en la misma red Wi-Fi publica podría capturar ese tráfico en texto plano y observar sus credenciales bancarias. Con esta información, el atacante lograría vulnerar la cuenta y hacer una transferencia no autorizadas.
+Por ejemplo, si un usuario accede a una página mediante HTTP y envía datos críticos (como usuario y contraseña del homebanking), un atacante posicionado en la misma red Wi-Fi publica podría capturar ese tráfico en texto plano y observar sus credenciales bancarias. Con esta información, el atacante lograría vulnerar la cuenta y hacer una transferencia no autorizada.
+
+Otro riesgo que puede aparecer es que un atacante manipule la información antes de que llegue al dispositivo del usuario. Como HTTP no verifica la integridad de los datos, el atacante podría realizar un ataque Man-in-the-Middle para inyectar código malicioso o alterar el contenido de la página, redirigiendo al usuario hacia un sitio web falso (phishing) para engañarlo.
+
+Puede pasar que el atacante cree una red Wi-Fi falsa que parezca legítima para engañar al usuario. Como el protocolo HTTP no tiene forma de comprobar si la página web a la que ingresamos es la verdadera, el atacante puede mostrar una copia exacta de la página original. De esta forma, el usuario creerá que está navegando en el sitio real, pero todo lo que escriba o envíe caerá directamente en manos del estafador. 
+
+### 4. ¿Cómo cambiaría este escenario utilizando una VPN?
+
+Al utilizar una VPN en este mismo escenario, los riesgos de navegar mediante HTTP en una red Wi-Fi pública se reducen drásticamente, ya que la herramienta protege la conexión desde su origen. El escenario cambiaría de la siguiente manera:
+
+- Cifrado: Aunque la página web utilice HTTP y solicite datos en texto plano, la VPN encripta toda la información antes de que salga del dispositivo. Si un atacante utiliza Wireshark para interceptar los paquetes, solo verá un bloque de datos indescifrable.
+- Túnel seguro: Se establece un canal de comunicación directo y privado entre el equipo del usuario y el servidor de la empresa VPN. Este túnel blindado aísla por completo la conexión del resto de los usuarios de la red pública, incluso si el usuario se ha conectado por error a una red Wi-Fi falsa.
+- Protección del tráfico: Al estar los datos encapsulados dentro del túnel, se bloquean los ataques Man-in-the-Middle. El atacante local pierde la capacidad de manipular los paquetes en tránsito, lo que impide que pueda inyectar código malicioso o redirigir al usuario hacia un sitio de phishing.
+- Privacidad: El servidor VPN asume la identidad de la conexión. Esto oculta la dirección IP real del usuario frente a los sitios web y evita que cualquier persona en la red local sepa qué páginas específicas se están visitando. También impide que los atacantes y las mismas páginas web sepan la ubicacion real.  
+
+### 5. 3 Reglas de Oro para navegar en redes Wi-Fi públicas
 
 
 
